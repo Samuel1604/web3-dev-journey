@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title><title>👨‍💻 Samuel's Web3 Journey</title>
-</title>
-</head>
-<body>
-  <!-- My name first for introduction -->
-  <h1>Samuel Ayokanmi</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>👨‍💻 Samuel's Web3 Journey</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.getElementById("mode-toggle");
+        toggle.addEventListener("change", () => {
+          document.body.classList.toggle("dark");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="toggle-container">
+      <p class="label-text">Dark Mode</p>
+      <label class="switch">
+        <input type="checkbox" id="mode-toggle" class="input" />
+        <span class="slider"></span>
+      </label>
+    </div>
+    <!-- My name first for introduction -->
+    <h1>Samuel Ayokanmi</h1>
 
-  <!-- Why I want to dive into web3 dev -->
-  <p>
-    I love the concept of development, and I am now actively participating in the Web3 ecosystem. 
-    I want to channel my passion for development into Web3.
-  </p>
+    <!-- Why I want to dive into web3 dev -->
+    <p>
+      I love the concept of development, and I am now actively participating in
+      the Web3 ecosystem. I want to channel my passion for development into
+      Web3.
+    </p>
 
-  <!-- What I will be working on for the first month of my journey into web3 dev -->
-  <p>
-    I am starting out my Web3 dev journey by building the following projects weekly for a month,
-    ending with a final capstone:
-  </p>
+    <!-- What I will be working on for the first month of my journey into web3 dev -->
+    <p>
+      I am starting out my Web3 dev journey by building the following projects
+      weekly for a month, ending with a final capstone:
+    </p>
 
-  <ol>
-    <li>A Landing Page for a DAO</li>
-    <li>A React Crypto Dashboard</li>
-    <li>Deploy a "Greet Me" smart contract</li>
-    <li>Build a Decentralized Guestbook dApp</li>
-  </ol>
-</body>
+    <ol>
+      <li>A Landing Page for a DAO</li>
+      <li>A React Crypto Dashboard</li>
+      <li>Deploy a "Greet Me" smart contract</li>
+      <li>Build a Decentralized Guestbook dApp</li>
+    </ol>
+  </body>
 </html>
