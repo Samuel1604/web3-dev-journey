@@ -1,48 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Sets the character encoding to UTF-8 to support all characters -->
     <meta charset="UTF-8" />
+
+    <!-- Ensures the page is responsive on all screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Sets the title of the web page (visible on the browser tab) -->
     <title>👨‍💻 Samuel's Web3 Journey</title>
+
+    <!-- Links to the external CSS file for styling -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Script to handle dark mode toggle functionality -->
     <script>
+      // Wait until the full HTML document has been loaded before running this script
       document.addEventListener("DOMContentLoaded", () => {
+
+        // Get the checkbox toggle element by its ID
         const toggle = document.getElementById("mode-toggle");
+
+        // Check if the user's last selected theme was "dark" by reading from localStorage
+        const isDark = localStorage.getItem("theme") === "dark";
+
+        // If it was dark mode, add the "dark" class to the <body> to enable dark theme
+        if (isDark) document.body.classList.add("dark");
+
+        // Reflect the current theme state on the checkbox (checked if dark mode)
+        toggle.checked = isDark;
+
+        // Listen for user interactions with the toggle switch (checkbox)
         toggle.addEventListener("change", () => {
+
+          // Toggle the "dark" class on the <body> when checkbox is checked/unchecked
           document.body.classList.toggle("dark");
+
+          // Save the new theme state ("dark" or "light") to localStorage
+          localStorage.setItem(
+            "theme",
+            document.body.classList.contains("dark") ? "dark" : "light"
+          );
         });
       });
     </script>
   </head>
+
   <body>
+    <!-- Container for the dark mode toggle switch -->
     <div class="toggle-container">
       <p class="label-text">Dark Mode</p>
       <label class="switch">
+        <!-- Checkbox input that controls dark mode -->
         <input type="checkbox" id="mode-toggle" class="input" />
+        <!-- Custom styled slider (handled in CSS) -->
         <span class="slider"></span>
       </label>
     </div>
-    <!-- My name first for introduction -->
-    <h1>Samuel Ayokanmi</h1>
 
-    <!-- Why I want to dive into web3 dev -->
+    <!-- Introduction section with name -->
+    <div class="container">
+      <h1>Samuel Ayokanmi</h1>
+    </div>
+
+    <!-- Paragraph about why I am pursuing Web3 development -->
     <p>
       I love the concept of development, and I am now actively participating in
       the Web3 ecosystem. I want to channel my passion for development into
       Web3.
     </p>
 
-    <!-- What I will be working on for the first month of my journey into web3 dev -->
+    <!-- Goals for the first month of my Web3 development journey -->
     <p>
       I am starting out my Web3 dev journey by building the following projects
       weekly for a month, ending with a final capstone:
     </p>
 
+    <!-- Ordered list of project goals -->
     <ol>
       <li>A Landing Page for a DAO</li>
       <li>A React Crypto Dashboard</li>
       <li>Deploy a "Greet Me" smart contract</li>
       <li>Build a Decentralized Guestbook dApp</li>
     </ol>
+
+    <!-- Section listing the technologies I'll be using -->
+    <h2>My Web3 Stack</h2>
+    <div class="stack-container">
+      <div class="stack-item">HTML + CSS</div>
+      <div class="stack-item">Solidity</div>
+      <div class="stack-item">Ethers.js</div>
+    </div>
   </body>
 </html>
