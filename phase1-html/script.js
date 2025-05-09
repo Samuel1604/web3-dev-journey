@@ -7,7 +7,7 @@ function greetUser(name) {
 function showTechStack() {
   // Selects the container holding the stack and alerts its text content
   const stack = document.querySelector(".stack-container");
-  alert("Your Web3 stack is: " + stack.innerText);
+  alert("Your Web3 stack is: \n" + stack.innerText);
 }
 
 // Function to toggle the visibility of a motivational message
@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("showTechStack")
     .addEventListener("click", showTechStack); // Show tech stack
   document
-    .getElementById("toggleMessage")
-    .addEventListener("click", toggleMessage); // Toggle motivational message
+    .getElementById("motivate-btn")
+    .addEventListener("click", toggleMessage);
+  // Toggle motivational message
 });
