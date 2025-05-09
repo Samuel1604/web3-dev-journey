@@ -12,38 +12,6 @@
 
     <!-- Links to the external CSS file for styling -->
     <link rel="stylesheet" href="style.css" />
-
-    <!-- Script to handle dark mode toggle functionality -->
-    <script>
-      // Wait until the full HTML document has been loaded before running this script
-      document.addEventListener("DOMContentLoaded", () => {
-
-        // Get the checkbox toggle element by its ID
-        const toggle = document.getElementById("mode-toggle");
-
-        // Check if the user's last selected theme was "dark" by reading from localStorage
-        const isDark = localStorage.getItem("theme") === "dark";
-
-        // If it was dark mode, add the "dark" class to the <body> to enable dark theme
-        if (isDark) document.body.classList.add("dark");
-
-        // Reflect the current theme state on the checkbox (checked if dark mode)
-        toggle.checked = isDark;
-
-        // Listen for user interactions with the toggle switch (checkbox)
-        toggle.addEventListener("change", () => {
-
-          // Toggle the "dark" class on the <body> when checkbox is checked/unchecked
-          document.body.classList.toggle("dark");
-
-          // Save the new theme state ("dark" or "light") to localStorage
-          localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark") ? "dark" : "light"
-          );
-        });
-      });
-    </script>
   </head>
 
   <body>
@@ -84,6 +52,13 @@
       <li>Build a Decentralized Guestbook dApp</li>
     </ol>
 
+    <button id="greetUser">Greet Me</button>
+    <button id="showTechStack">Show My Tech Stack</button>
+    <button id="toggleMessage">Toggle Motivation</button>
+    <p id="special-msg" style="display: none; font-weight: bold; color: green">
+      🚀 Keep building. You are Web3's future.
+    </p>
+
     <!-- Section listing the technologies I'll be using -->
     <h2>My Web3 Stack</h2>
     <div class="stack-container">
@@ -91,5 +66,6 @@
       <div class="stack-item">Solidity</div>
       <div class="stack-item">Ethers.js</div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
