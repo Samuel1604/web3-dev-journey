@@ -1,19 +1,17 @@
 // Function to greet the user with a custom message
 function greetUser(name) {
-  alert("Welcome, to " + name + " 's 👋 Portfolio");
+  alert(`Welcome to ${name}'s 👋 Portfolio`);
 }
 
 // Function to display the developer's tech stack using an alert
 function showTechStack() {
-  // Selects the container holding the stack and alerts its text content
   const stack = document.querySelector(".stack-container");
-  alert("Your Web3 stack is: \n" + stack.innerText);
+  alert(`Your Web3 stack is: \n${stack.innerText}`);
 }
 
 // Function to toggle the visibility of a motivational message
 function toggleMessage() {
   const msg = document.getElementById("special-msg");
-  // Toggle display between 'block' and 'none'
   msg.style.display = msg.style.display === "none" ? "block" : "none";
 }
 
@@ -23,31 +21,57 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("mode-toggle");
   const isDark = localStorage.getItem("theme") === "dark";
 
-  // If dark mode was previously enabled, apply it
+  // Apply dark mode if previously enabled
   if (isDark) document.body.classList.add("dark");
 
   // Set the toggle switch based on saved preference
   toggle.checked = isDark;
 
-  // When user toggles the switch, apply/remove dark mode and save preference
+  // Add event listener to toggle dark mode on/off
   toggle.addEventListener("change", () => {
     document.body.classList.toggle("dark");
-    localStorage.setItem(
-      "theme",
-      document.body.classList.contains("dark") ? "dark" : "light"
-    );
+    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
   });
 
-  // Add event listeners to custom buttons
-  document.getElementById("greetUser").addEventListener("click", () => {
-    greetUser("Samuel"); // Greet user with predefined name
-  });
+  // Add event listeners for the buttons
+  document.getElementById("welcome-msg").addEventListener("click", () => greetUser("Samuel"));
+  document.getElementById("techStack-btn").addEventListener("click", showTechStack);
+  document.getElementById("motivate-btn").addEventListener("click", toggleMessage);
+});
 
-  document
-    .getElementById("showTechStack")
-    .addEventListener("click", showTechStack); // Show tech stack
-  document
-    .getElementById("motivate-btn")
-    .addEventListener("click", toggleMessage);
-  // Toggle motivational message
+// Array of weekly project milestones
+const milestones = [
+  "Build a Landing Page for a DAO",
+  "Create a React Crypto Dashboard",
+  "Deploy a 'Greet Me' smart contract",
+  "Build a Decentralized Guestbook dApp"
+];
+
+// Get the UL element in the milestones section
+const milestoneList = document.getElementById("milestone-list");
+
+// Loop through each milestone and create a list item for it
+milestones.forEach((goal, index) => {
+  const li = document.createElement("li");
+  li.textContent = `Week ${index + 1}: ${goal}`;
+  milestoneList.appendChild(li);
+});
+
+// Daily habits list
+const dailyHabits = [
+  "Code for at least 1 hour",
+  "Read Web3 or JavaScript articles",
+  "Write one Tweet about what I learned",
+  "Push code to GitHub",
+  "Reflect on the day’s progress"
+];
+
+// Get the UL element for daily habits
+const habitsList = document.getElementById("daily-habits-list");
+
+// Loop through each habit and create a list item for it
+dailyHabits.forEach((habit, index) => {
+  const li = document.createElement("li");
+  li.textContent = `Habit ${index + 1}: ${habit}`;
+  habitsList.appendChild(li);
 });

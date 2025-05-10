@@ -1,71 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Sets the character encoding to UTF-8 to support all characters -->
+    <!-- Meta Tags for character encoding and responsiveness -->
     <meta charset="UTF-8" />
-
-    <!-- Ensures the page is responsive on all screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Sets the title of the web page (visible on the browser tab) -->
     <title>👨‍💻 Samuel's Web3 Journey</title>
-
-    <!-- Links to the external CSS file for styling -->
+    
+    <!-- Link to external CSS file for styling -->
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <!-- Container for the dark mode toggle switch -->
+    <!-- Dark Mode Toggle Section -->
     <div class="toggle-container">
       <p class="label-text">Dark Mode</p>
       <label class="switch">
-        <!-- Checkbox input that controls dark mode -->
         <input type="checkbox" id="mode-toggle" class="input" />
-        <!-- Custom styled slider (handled in CSS) -->
         <span class="slider"></span>
       </label>
     </div>
 
-    <!-- Introduction section with name -->
+    <!-- Introduction Section -->
     <div class="container">
       <h1>Samuel Ayokanmi</h1>
     </div>
-
-    <!-- Paragraph about why I am pursuing Web3 development -->
-    <p>
-      I love the concept of development, and I am now actively participating in
-      the Web3 ecosystem. I want to channel my passion for development into
-      Web3.
+    <button id="welcome-msg">Welcome</button>
+    <button id="techStack-btn">My Tech Stack</button>
+    <button id="motivate-btn">Motivate Me</button>
+    <p id="special-msg" class="motivational-msg" style="display: none;">
+      🚀 Keep building. You are Web3's future.
     </p>
 
-    <!-- Goals for the first month of my Web3 development journey -->
+    <!-- Personal Statement -->
+    <p>
+      I love the concept of development, and I am now actively participating in
+      the Web3 ecosystem. I want to channel my passion for development into Web3.
+    </p>
+
+    <!-- Project Goals Section -->
     <p>
       I am starting out my Web3 dev journey by building the following projects
       weekly for a month, ending with a final capstone:
     </p>
+    
+    <section id="milestones">
+      <h2>📍 Weekly Milestones</h2>
+      <ul id="milestone-list"></ul>
+    </section>
 
-    <!-- Ordered list of project goals -->
-    <ol>
-      <li>A Landing Page for a DAO</li>
-      <li>A React Crypto Dashboard</li>
-      <li>Deploy a "Greet Me" smart contract</li>
-      <li>Build a Decentralized Guestbook dApp</li>
-    </ol>
+    <section>
+      <h2>Daily Consistency Habits</h2>
+      <ul id="daily-habits-list"></ul>
+    </section>
 
-    <button id="greetUser">Greet Me</button>
-    <button id="showTechStack">Show My Tech Stack</button>
-    <button id="motivate-btn">Motivate Me</button>
-    <p id="special-msg" style="display: none; font-weight: bold; color: green">
-      🚀 Keep building. You are Web3's future.
-    </p>
-
-    <!-- Section listing the technologies I'll be using -->
+    <!-- Web3 Tech Stack Section -->
     <h2>My Web3 Stack</h2>
     <div class="stack-container">
       <div class="stack-item">HTML + CSS</div>
       <div class="stack-item">Solidity</div>
       <div class="stack-item">Ethers.js</div>
     </div>
+
+    <!-- Link to external JavaScript -->
     <script src="script.js"></script>
   </body>
 </html>

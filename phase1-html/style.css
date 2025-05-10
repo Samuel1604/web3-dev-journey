@@ -1,82 +1,81 @@
-/* Base styling for the entire page */
+/* Base styles for the entire page */
 body {
-  font-family: Arial, sans-serif; /* Use a clean, readable font */
-  background-color: #f4f4f4; /* Light gray background for a soft look */
-  padding: 20px; /* Space inside the body element */
-  line-height: 1.6; /* Improves readability of text */
-  max-width: 700px; /* Limits page width for better reading experience */
-  margin: auto; /* Centers the content horizontally */
-  transition: background-color 0.4s ease, color 0.4s ease; /* Smooth color transitions for theme switching */
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: auto;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Responsive design: adjust layout for smaller screens */
+/* Responsive design for smaller screens */
 @media (max-width: 768px) {
   body {
     padding: 19px;
   }
-
   h1 {
-    font-size: 1.5em; /* Smaller heading font for small screens */
-    color: #3498bd; /* Different heading color for visual variation */
+    font-size: 1.5em;
+    color: #3498bd;
   }
 }
 
-/* Styling for the main heading */
+/* Header and main content styling */
 h1 {
-  color: #2c3e50; /* Dark blue-gray color */
-  text-align: center; /* Center the heading */
-  font-size: 2em; /* Slightly larger text */
+  color: #2c3e50;
+  text-align: center;
+  font-size: 2em;
 }
 
-/* Paragraph text styling */
+/* General paragraph styling */
 p {
-  color: #34495e; /* Slightly dark gray text color */
-  font-size: 1.1em; /* Slightly larger than default for better readability */
+  color: #34495e;
+  font-size: 1.1em;
 }
 
-/* Ordered list (project list) styling */
-ol {
-  background: #fff; /* White background for contrast */
+/* Ordered list and unordered list styling */
+ol, ul {
+  background: #fff;
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
   margin-bottom: 15px;
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* List items spacing */
+/* List item spacing */
 li {
   margin-bottom: 10px;
 }
 
-/* Flex container for name or header section */
+/* Container layout for name or header section */
 .container {
-  display: flex; /* Use Flexbox layout */
-  justify-content: space-between; /* Spread items across the container */
-  align-items: center; /* Align items vertically */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Stack container for Web3 technologies */
+/* Stack container for Web3 tech stack */
 .stack-container {
-  display: flex; /* Flex layout to arrange tech stack items */
-  gap: 1rem; /* Space between items */
-  flex-wrap: wrap; /* Wrap items to new lines if needed */
-  justify-content: center; /* Center items horizontally */
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   margin-top: 20px;
 }
 
-/* Each technology item in the stack */
+/* Styling for each stack item */
 .stack-item {
   background: #fff;
   padding: 10px 15px;
   border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  flex: 1 1 30%; /* Flex-grow, shrink, and basis for responsiveness */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  flex: 1 1 30%;
   text-align: center;
 }
 
-/* Container for the dark mode toggle */
+/* Styling for dark mode toggle container */
 .toggle-container {
   margin-top: 20px;
   display: flex;
@@ -84,14 +83,14 @@ li {
   align-items: flex-start;
 }
 
-/* Text label above the toggle switch */
+/* Label for the dark mode toggle */
 .label-text {
   font-size: 1.1em;
   margin-bottom: 6px;
   color: #2c3e50;
 }
 
-/* Switch container for toggle button */
+/* Custom switch styling */
 .switch {
   position: relative;
   display: inline-block;
@@ -99,14 +98,12 @@ li {
   height: 24px;
 }
 
-/* Hide the default checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* Custom slider track */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -119,7 +116,6 @@ li {
   transition: 0.4s;
 }
 
-/* The round slider thumb (circle) */
 .slider::before {
   position: absolute;
   content: "";
@@ -132,31 +128,38 @@ li {
   transition: 0.4s;
 }
 
-/* Styles applied when the toggle is checked (ON state) */
 .switch input:checked + .slider {
-  background-color: #4caf50; /* Green background */
+  background-color: #4caf50;
 }
 
-/* Moves the slider thumb to the right when active */
 .switch input:checked + .slider::before {
   transform: translateX(26px);
 }
 
-/* Dark mode styles activated via JavaScript */
+/* Dark Mode Styles */
 body.dark {
-  background-color: #1e1e1e; /* Dark background */
-  color: #f1f1f1; /* Light text for contrast */
+  background-color: #1e1e1e;
+  color: #f1f1f1;
 }
 
-/* Applies dark background to containers in dark mode */
-body.dark ol, 
+body.dark ol,
+body.dark ul,
 body.dark .stack-item {
   background: #2c3e50;
 }
 
-/* Applies light text color to content in dark mode */
 body.dark p,
 body.dark li,
 body.dark h1 {
   color: #ecf0f1;
+}
+
+/* Motivation message styling */
+.motivational-msg {
+  font-weight: bold;
+  color: green;
+}
+body.dark .motivational-msg {
+  font-weight: bold;
+  color: green;
 }
